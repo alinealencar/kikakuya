@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS KIKAKUYA;
+CREATE DATABASE IF NOT EXISTS KIKAKUYA;
+USE KIKAKUYA;
+grant all on KIKAKUYA.* to 'admin'@'localhost' identified by 'admin'; 
 CREATE TABLE Appointment (
   apptId       int(10) NOT NULL AUTO_INCREMENT, 
   apptDateTime date NOT NULL, 
@@ -25,7 +29,7 @@ CREATE TABLE Guest (
   lastName  varchar(50) NOT NULL, 
   email     varchar(50) NOT NULL,
   isPresent   int(1),
-  group varchar(50),
+  guestGroup varchar(50),
   kidsWith int(3),
   adultsWith int(3),
   kidsMax int(3),
@@ -69,7 +73,7 @@ CREATE TABLE Vendor (
   vendorCategory varchar(50), 
   EventeventId   int(10) NOT NULL, 
   PRIMARY KEY (vendorId));
-ALTER TABLE Good ADD INDEX FKGoodVendor (VendorvendorId), ADD CONSTRAINT FKGoodVendorFOREIGN KEY (VendorvendorId) REFERENCES Vendor (vendorId);
+ALTER TABLE Good ADD INDEX FKGoodVendor (VendorvendorId), ADD CONSTRAINT FKGoodVendor FOREIGN KEY (VendorvendorId) REFERENCES Vendor (vendorId);
 ALTER TABLE Vendor ADD INDEX FKVendorEvent (EventeventId), ADD CONSTRAINT FKVendorEvent FOREIGN KEY (EventeventId) REFERENCES Event (eventId);
 ALTER TABLE Item ADD INDEX FKItemList (ListlistId), ADD CONSTRAINT FKItemList FOREIGN KEY (ListlistId) REFERENCES List (listId);
 ALTER TABLE List ADD INDEX FKListEvent (EventeventId), ADD CONSTRAINT FKListEvent FOREIGN KEY (EventeventId) REFERENCES Event (eventId);
