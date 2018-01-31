@@ -8,10 +8,12 @@
 <%@include file="header.jsp" %>
 <%@include file="menu.jsp" %>
 <div class="container.container-fluid">
+	<div class>
 	<!-- body contents start -->
-  <h1>NEW PAGE</h1>
-  <p>This is some text.</p> 
+		  <h1>NEW PAGE</h1>
+		  <p>This is some text.</p> 
   	<!-- body contents end -->
+  	</div>
 </div>
 </body>
 <%@include file="footer.jsp" %>
