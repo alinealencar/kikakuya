@@ -1,5 +1,12 @@
-@CHARSET "ISO-8859-1";
+@CHARSET "UTF-8";
 
 /*********************************
 common components
 **********************************/
+/****** footer ******/
+footer {
+    padding: 15px;
+    color: white;
+    background: #66cdcc; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom right, #326698, #66cdcc); /* Standard syntax (must be last) */
+}
